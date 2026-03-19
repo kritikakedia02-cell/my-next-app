@@ -2,6 +2,7 @@ import { compileMDX } from 'next-mdx-remote/rsc';
 import { getAllPosts, getPostBySlug, PostMeta } from '@/lib/posts';
 import rehypeHighlight from 'rehype-highlight';
 import { notFound } from 'next/navigation';
+import type { PluggableList } from 'unified';
 
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -30,7 +31,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
     source: content!,
     options: {
       mdxOptions: {
-        rehypePlugins: [rehypeHighlight as any],
+        rehypePlugins: [rehypeHighlight] as PluggableList,
       },
     },
   });
