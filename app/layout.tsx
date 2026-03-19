@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Kritika.dev',
   description: 'Personal site built with Next.js and Tailwind CSS',
   alternates: {
-    types: { 'application/rss+xml': 'https://kritika.dev/feed.xml' },
+    types: { 'application/rss+xml': 'https://my-next-app-five-umber.vercel.app/feed.xml' },
   },
 };
 

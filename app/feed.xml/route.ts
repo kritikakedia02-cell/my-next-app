@@ -1,6 +1,6 @@
 import { getAllPosts } from '@/lib/posts';
 
-const SITE_URL = 'https://kritika.dev';
+const SITE_URL = 'https://my-next-app-five-umber.vercel.app';
 
 export async function GET() {
   const posts = getAllPosts();
