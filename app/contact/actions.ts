@@ -38,7 +38,7 @@ export async function sendContactEmail(
   try {
     await resend.emails.send({
       from:    'Contact Form <onboarding@resend.dev>',
-      to:      'kritikakedia@gmail.com',         // ← your email
+      to:      'kritikakedia06@gmail.com',
       subject: `New message from ${name}`,
       text:    `Name: ${name}\nEmail: ${email}\n\n${message}`,
       html:    `
