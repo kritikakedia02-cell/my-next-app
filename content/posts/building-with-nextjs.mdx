@@ -1,0 +1,43 @@
+---
+title: "Building with Next.js 14"
+date: "2026-03-15"
+description: "What I've learned building my first real Next.js app with the App Router."
+---
+
+# Building with Next.js 14
+
+The App Router changed how I think about React. Here's what clicked for me.
+
+## Server Components by default
+
+Every component is a Server Component unless you add `"use client"`. This means
+less JavaScript shipped to the browser by default.
+
+```tsx
+// This runs ONLY on the server — zero client JS
+export default async function Page() {
+  const data = await fetch("https://api.example.com/posts");
+  const posts = await data.json();
+
+  return <ul>{posts.map(p => <li key={p.id}>{p.title}</li>)}</ul>;
+}
+```
+
+## File-based routing
+
+Drop a `page.tsx` in any folder under `app/` and it becomes a route.
+
+```
+app/
+  page.tsx          → /
+  blog/
+    page.tsx        → /blog
+    [slug]/
+      page.tsx      → /blog/anything
+```
+
+## What I'm building next
+
+- A contact form with server actions
+- Dark mode that persists across sessions
+- RSS feed for this blog

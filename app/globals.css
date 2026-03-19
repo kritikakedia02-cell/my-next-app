@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Syntax highlighting — light mode */
+@import 'highlight.js/styles/github.css';
+
+/* Override with dark theme when .dark class is active */
+.dark .hljs { background: #161b22; color: #e6edf3; }
+.dark .hljs-keyword  { color: #ff7b72; }
+.dark .hljs-string   { color: #a5d6ff; }
+.dark .hljs-comment  { color: #8b949e; }
+.dark .hljs-function { color: #d2a8ff; }
+.dark .hljs-number   { color: #79c0ff; }
+
+:root {
+  /* Primitive tokens (raw values) */
+  --color-white: #ffffff;
+  --color-black: #0a0a0a;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-900: #111827;
+
+  --color-blue-500: #3b82f6;
+
+  /* Semantic tokens (USED in UI) */
+  --background: var(--color-white);
+  --foreground: var(--color-gray-900);
+
+  --primary: var(--color-blue-500);
+  --primary-foreground: var(--color-white);
+
+  --border: #e5e7eb;
+
+  /* Typography tokens */
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing tokens */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border radius tokens */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadow tokens */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f9fafb;
+
+  --primary: #60a5fa;
+  --primary-foreground: #0a0a0a;
+
+  --border: #27272a;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
